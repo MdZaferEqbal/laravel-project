@@ -18,7 +18,7 @@
             </ol>
             <hr/>
             <div class="text-center">
-                <a href="/directives" class="text-decoration-none text-dark"><strong>Blade Directives</strong></a>
+                <a href="https://github.com/MdZaferEqbal/laravel-tutorial" target="_blank"><button class="btn btn-warning text-danger mb-1">Checkout GitHub Repo for this Project</button></a>
             </div>
         </div>
     </div>

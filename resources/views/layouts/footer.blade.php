@@ -1,4 +1,4 @@
-    <footer>
+    <footer class="laravel-tutorial-footer">
         <div class="card-footer fw-light bg-dark text-light text-center">
             heyitszafer@gmail.com
         </div>
