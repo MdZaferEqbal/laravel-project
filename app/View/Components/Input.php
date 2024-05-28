@@ -18,10 +18,13 @@ class Input extends Component
     public $required = FALSE;
     public $minlength = NULL;
     public $maxlength = NULL;
+    public $custom_error_message = "";
+    public $customClass = "";
+
     /**
      * Create a new component instance.
      */
-    public function __construct($id, $label, $type, $name, $value = null, $info = null, $required = FALSE, $minlength = NULL, $maxlength = NULL )
+    public function __construct($id, $label, $type, $name, $value = null, $info = null, $required = FALSE, $minlength = NULL, $maxlength = NULL, $custom_error_message = null, $customClass = null )
     {
         $this->id = $id;
         $this->label = $label;
@@ -41,6 +44,12 @@ class Input extends Component
         }
         if(isset($maxlength)) {
             $this->maxlength = $maxlength;
+        }
+        if(isset($custom_error_message)) {
+            $this->custom_error_message = $custom_error_message;
+        }
+        if(isset($customClass)) {
+            $this->customClass = $customClass;
         }
     }
 
