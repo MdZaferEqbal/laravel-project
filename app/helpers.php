@@ -16,3 +16,11 @@ if( ! function_exists('dMYDateFormat')) {
         return date("d-M-Y", strtotime($date));
     }
 }
+
+if( ! function_exists('printInPreTag')) {
+    function printInPreTag($data) {
+        echo "<pre>";
+        print_r($data);
+        echo "</pre>";
+    }
+}

@@ -4,6 +4,6 @@
     @error($name)
     <div class="form-text text-warning">{{$message}}</div>
     @elseif($info)
-    <div class="form-text {{isset($customClass) ? "text-" . $customClass : ""}}">{{$info}}</div>
+    <div class="form-text {{isset($customClass) ? "text-" . $customClass : ""}}">{!!$info!!}</div>
     @enderror
 </div>

@@ -22,7 +22,7 @@ class CustomerProfile extends Controller
 
         if(Customers::where('email', $request['customer_email'])->first()) {
             $button = "Sign Up";
-            $customer_exists_message = "Customer already exists.";
+            $customer_exists_message = "Customer Already Exists.";
             $class = "warning";
 
             $data = compact('button', 'customer_exists_message', 'class');
@@ -57,8 +57,8 @@ class CustomerProfile extends Controller
 
     public function signIn(Request $req) {
         $req->validate([
-            'customer_email'           => 'required|email',
-            'customer_password'        => 'required',
+            'customer_email'    => 'required|email',
+            'customer_password' => 'required',
         ]);
 
         $req_data = $req->all();
@@ -66,7 +66,7 @@ class CustomerProfile extends Controller
         $customer = Customers::where('email', $req_data['customer_email'])->first();
 
         if( ! isset($customer) ) {
-            $customer_not_found = "Customer not Found. Try <a class='text-info' href='{{url('/sign-up')}}'>Sign Up</a>";
+            $customer_not_found = "Customer not Found. Try <a class='text-info' href='/sign-up'>Sign Up</a>";
 
             $data = compact('customer_not_found');
             return view('sign-in')->with($data);
@@ -86,6 +86,6 @@ class CustomerProfile extends Controller
     public function signOut() {
         session()->forget(['customer_id', 'customer_name']);
 
-        return redirect('/');
+        return redirect()->back();
     }
 }
