@@ -97,6 +97,10 @@ Route::get('/unauthorized', function () {
     return view('unauthorized');
 })->name('unauthorized.page');
 
+Route::get('/api-restful-api', function () {
+    return view('api-restful-api');
+})->name('api.restful.api.page');
+
 // Customer Sign Up Page Route
 Route::get('/sign-up', [CustomerProfile::class, 'signUpIndex'])->name('sign.up');
 // Customer Sign Up Route

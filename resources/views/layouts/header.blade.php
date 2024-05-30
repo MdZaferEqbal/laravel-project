@@ -57,6 +57,7 @@
                             <li><a class="dropdown-item text-dark" href="{{route('database.seeder.faker.doc')}}">Seeder & Faker in Laravel</a></li>
                             <li><a class="dropdown-item text-dark" href="{{route('foreign.key.relation.doc')}}">Defining Foreign key Relation in Laravel</a></li>
                             <li><a class="dropdown-item text-dark" href="{{route('middleware.doc')}}">Middleware in Laravel</a></li>
+                            <li><a class="dropdown-item text-dark" href="{{route('api.restful.api.page')}}">Api & Resful Api in Laravel</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item text-dark" target="_blank" href="https://laravel.com/docs/11.x">Laravel Documentation</a></li>
                         </ul>

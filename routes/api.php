@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +15,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+// Route to store User's data in database.
+Route::post('user/store', 'App\Http\Controllers\Api\UserController@store');
+// Route to display all User's data from database.
+Route::get('get/users/{flag?}', [UserController::class, 'index']);
+// Route to display selected User's data from database.
+Route::get('get/user/{id}', [UserController::class, 'show']);
+// Route to delete selected User's data from database.
+Route::delete('delete/user/{id}', [UserController::class, 'destroy']);
+// Route to update all columns of table in database for selected User.
+Route::put('update/user/{id}', [UserController::class, 'update']);
+// Route to update one column of table in database in this case the password for selected User.
+Route::patch('update/user-password/{id}', [UserController::class, 'updatePassword']);
