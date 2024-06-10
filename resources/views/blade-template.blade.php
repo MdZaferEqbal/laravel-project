@@ -18,7 +18,7 @@
             </ol>
             <hr/>
             <div class="text-center">
-                <a href="https://github.com/MdZaferEqbal/laravel-project" target="_blank"><button class="btn btn-warning text-dark mb-1 fs-3"><i class="fa-brands fa-github"></i> Project</button></a>
+                <a href="https://github.com/MdZaferEqbal/laravel-project" target="_blank"><button class="btn btn-outline-dark mb-1 fs-3"><i class="fa-brands fa-github"></i> Project</button></a>
             </div>
         </div>
     </div>
