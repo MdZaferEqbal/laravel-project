@@ -14,8 +14,7 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->text('address')->nullable()->after('email_verified_at');
             $table->text('pincode',6)->nullable()->after('address');
-            $table->string('contact',10)->nullable()->after('pincode');
-            $table->boolean('status')->comment("1:Active,0:Inactive")->default(1)->after('contact');
+            $table->boolean('status')->comment("1:Active,0:Inactive")->default(1)->after('pincode');
         });
     }
 

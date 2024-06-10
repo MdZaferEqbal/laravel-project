@@ -321,7 +321,7 @@
         </ol>
         <hr/>
         <div class="text-center">
-            <a href="/" class="text-decoration-none text-dark"><strong>Laravel Tutorial Home page</strong></a>
+            <a href="/" class="text-decoration-none text-dark"><strong><i class="fa-solid fa-house"></i></strong></a>
         </div>
     </div>
 </div>

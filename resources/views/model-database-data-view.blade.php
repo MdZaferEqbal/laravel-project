@@ -12,12 +12,12 @@
         <div class="d-flex justify-content-between">
             <form class="d-flex mb-1" role="search" action="{{url('/')}}/customer/search">
                 <div class="input-group mb-1">
-                    <a href="{{route('customer.view')}}" type="button" class="input-group-text text-danger btn btn-warning" id="basic-addon2">Reset</a>
+                    <a href="{{route('customer.view')}}" type="button" class="input-group-text text-danger btn btn-warning" id="basic-addon2"><i class="fa-solid fa-rotate-left"></i></a>
                     <input type="text" class="form-control outline-none text-dark btn btn-outline-warning" placeholder="Search" name="customerSearch" value="{{old('customerSearch')}}" aria-label="Search">
-                    <button type="search" class="input-group-text text-danger btn btn-warning" id="basic-addon2">Search</button>
+                    <button type="search" class="input-group-text text-danger btn btn-warning" id="basic-addon2"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
             </form>
-            <a href="{{route('customer.new')}}"><button class="btn btn-warning text-danger mb-1">Add New Customer</button></a>
+            <a href="{{route('customer.new')}}"><button class="btn btn-warning text-dark mb-1"><i class="fa-solid fa-plus"></i> Customer</button></a>
         </div>
         <table class="table table-dark text-center table-borderless ">
             @if(count($customers) === 0)
@@ -114,7 +114,15 @@
                             @endif
                         </td>
                         <td class="text-danger">
-                            {{$customer->gender}}
+                            @if($customer->gender == "Male")
+                                <i class="fa-solid fa-person text-primary fs-3"></i>
+                            @elseif($customer->gender == "Female")
+                                <i class="fa-solid fa-person-dress color-pink fs-3"></i>
+                            @elseif($customer->gender == "Others")
+                                <i class="fa-solid fa-person-half-dress color-pride fs-3"></i>
+                            @else
+                                {{$customer->gender}}
+                            @endif
                         </td>
                         <td class="text-danger">{{$customer->points}}</td>
                         <td class="text-danger">
@@ -154,7 +162,7 @@
             @endif
         </table>
         <div class="text-end">
-            <a href="{{route('customer.trash.view')}}"><button class="btn btn-warning text-danger mt-n14">View Trashed Data</button></a>
+            <a href="{{route('customer.trash.view')}}"><button class="btn btn-warning text-dark mt-n14"><i class="fa-solid fa-trash-can-arrow-up"></i> Data</button></a>
         </div>
     </div>
 </div>

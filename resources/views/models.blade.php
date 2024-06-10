@@ -26,7 +26,7 @@
         </ul>
         <!-- Insert Query in Laravel Eloquent ORM -->
         <h3 class="text-center">Insert Query in Laravel Eloquent ORM</h3>
-        <a href="/model-demo" class="text-decoration-none text-center text-info"><p><strong>Click here to checkout the Demo!</strong></p></a>
+        <a href="/model-demo" class="text-decoration-none text-center text-warning"><p><strong>Click here to checkout the Demo!</strong></p></a>
     </div>
 </div>
 @endsection

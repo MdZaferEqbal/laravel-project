@@ -12,8 +12,10 @@ class SearchNavBar extends Controller
 
         if($textToSearch !== "") {
             $searchRouteData = SearchRouteData::where('name', 'LIKE', "%$textToSearch%")->orwhere('route', 'LIKE', "%$textToSearch%")->first();
+        } else {
+            return redirect()->back();
         }
-        if($searchRouteData != null) {
+        if(isset($searchRouteData)) {
             return redirect($searchRouteData->route);
         } else {
             return redirect('/404');

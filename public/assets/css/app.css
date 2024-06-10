@@ -27,6 +27,31 @@
     background-color: #D23645;
 }
 
+.color-light-blue {
+    color: #ADD8E6;
+}
+
+.color-blue {
+    color: #0000FF;
+}
+
+.color-pink {
+    color: #c36978;
+}
+
+.color-pride {
+    background: linear-gradient(to right, 
+        #FF0000,  /* Red */
+        #FF8C00,  /* Orange */
+        #FFFF00,  /* Yellow */
+        #008000,  /* Green */
+        #0000FF,  /* Blue */
+        #8B00FF   /* Violet */
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .main-content {
     min-height: 77.7vh;
 }

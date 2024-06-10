@@ -13,7 +13,7 @@
         {!! Form::open(['url' => '/file-upload', 'method' => 'post', 'enctype' => 'multipart/form-data', 'class' => 'needs-validation']) !!}
             <div class="input-group">
                 <input type="file" class="form-control btn btn-secondary" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="fileToUpload">
-                <button class="btn btn-success text-dark" type="submit" id="inputGroupFileAddon04">Upload</button>
+                <button class="btn btn-success text-light" type="submit" id="inputGroupFileAddon04"><i class="fa-solid fa-upload"></i></button>
             </div>
         {!! Form::close() !!}
         @if(isset($fileData))
