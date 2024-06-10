@@ -32,7 +32,7 @@
                 @enderror
             </div>
             <div class="text-center">
-                <button type="submit" class="btn btn-success">Sign In</button>
+                <button type="submit" onclick="loginUser()" class="btn btn-success">Sign In</button>
             </div>
         </form>
     </div>

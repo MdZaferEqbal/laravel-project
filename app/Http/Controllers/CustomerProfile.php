@@ -80,7 +80,7 @@ class CustomerProfile extends Controller
         session()->put('customer_id', $customer->id);
         session()->put('customer_name', $customer->name);
 
-        return redirect('/');
+        return redirect('/users-data');
     }
 
     public function signOut() {

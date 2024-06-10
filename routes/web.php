@@ -101,6 +101,10 @@ Route::get('/api-restful-api', function () {
     return view('api-restful-api');
 })->name('api.restful.api.page');
 
+Route::get('/users-data', function() { 
+    return view('users-data'); 
+})->name('users.data');
+
 // Customer Sign Up Page Route
 Route::get('/sign-up', [CustomerProfile::class, 'signUpIndex'])->name('sign.up');
 // Customer Sign Up Route

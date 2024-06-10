@@ -61,7 +61,7 @@
             </table>
         </div>
         <div class="text-center pb-2">
-            <strong><a class="text-decoration-none text-warning" href="https://github.com/MdZaferEqbal/laravel-tutorial">Click here to checkout the GitHub Repository for this project.</a></strong>
+            <strong><a class="text-decoration-none fs-3 btn btn-outline-dark" href="https://github.com/MdZaferEqbal/laravel-project"><i class="fa-brands fa-github"></i> Link</a></strong>
         </div>
     </div>
 </div>

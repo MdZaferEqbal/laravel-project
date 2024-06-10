@@ -24,7 +24,7 @@
             </div>
             <!-- DOB -->
             <strong>Date of Birth(DOB): </strong>
-            <input type="date" name="customer_dob" value="{{old('customer_dob')}}" id="btnradio1" autocomplete="off" class="btn btn-outline-dark rounded mb-2">
+            <input type="date" name="customer_dob" value="{{old('customer_dob')}}" id="btnradio1dob" autocomplete="off" class="btn btn-outline-dark rounded mb-2">
             {{-- email --}}
             <x-input id="exampleInputEmail1" label="Email" type="email" value="{{old('customer_email')}}" name="customer_email" info="We'll never share your email with anyone else." required="True" info="{{isset($customer_exists_message) ? $customer_exists_message : null}}" customClass="{{isset($class) ? $class : null}}"/>
             <x-input id="exampleInputAddress" label="Address" type="text" value="{{old('customer_address')}}" name="customer_address" info="We'll never share your address with anyone else."/>
@@ -78,7 +78,7 @@
             <x-input id="exampleInputPassword1" label="Password" type="password" name="customer_password" required="True"/>
             <x-input id="exampleInputConfirmPassword" label="Confirm Password" type="password" name="customer_confirmpassword" required="True"/>
             <div class="text-center">
-                <button type="submit" class="btn btn-dark text-light">{{isset($button) ? $button : "Submit"}}</button>
+                <button type="submit" onClick="signUp()" class="btn btn-dark text-light">{{isset($button) ? $button : "Submit"}}</button>
             </div>
         </form>
     </div>

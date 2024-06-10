@@ -12,7 +12,7 @@
         <h3 class="text-center">Configuration of Helpers</h3>
         <strong>Helpers:</strong>
         <It>In Laravel, helpers store essential functions that are used across the application, allowing you to implement reusable functions that will be used or for future use on multiple pages. It's advisable to verify the existence of a function before implementing it by using the function_exists('functionName') in an if condition, as this practice helps prevent potential errors or conflicts within the code.</p>
-        <p>You can check out the code for this project by clicking on the highlighted text: <a class="text-info" target="_blank" href="https://github.com/MdZaferEqbal/laravel-tutorial">Laravel Tutorial GitHub Link</a></p>
+        <p>You can check out the code for this project by clicking on this button: <a class="text-decoration-none btn btn-outline-dark" target="_blank" href="https://github.com/MdZaferEqbal/laravel-project"><i class="fa-brands fa-github"></i> Project</a></p>
     </div>
 </div>
 @endsection

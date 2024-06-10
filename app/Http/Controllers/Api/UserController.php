@@ -55,7 +55,7 @@ class UserController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a new user's resource in storage.
      */
     public function store(Request $request)
     {
@@ -93,6 +93,114 @@ class UserController extends Controller
                     'message' => 'User registered successfully'
                 ], 200);
             }
+        }
+    }
+
+    /**
+     * Store a newly created user's resource in storage.
+     */
+    public function register(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'customer_name'     => ['required'],
+            'customer_email'    => ['required', 'email', 'unique:users,email'],
+            'customer_password' => ['required', 'min:8' ],
+        ]);
+
+        if($validator->fails()) {
+            $response = [
+                'message' => $validator->messages(),
+                'status'  => 0,
+            ];
+            $responseCode = 400;
+            return response()->json($response, $responseCode);
+        } else {
+            $data = [
+                'name'     => $request->customer_name,
+                'email'    => $request->customer_email,
+                'address'  => $request->customer_address,
+                'pincode'  => $request->customer_pincode,
+                'password' => Hash::make($request->customer_password)
+            ];
+
+            DB::beginTransaction();
+            try {
+                $user = User::create($data);
+                $token = $user->createToken("auth_token")->accessToken;
+                DB::commit();
+
+                $response = [
+                    'message' => 'User registered successfully',
+                    'status'  => 1,
+                    'token'   => $token,
+                ];
+                $responseCode = 200;
+            } catch(\Exception $error) {
+                DB::rollBack();
+
+                $response = [
+                    'message' => 'Internal Server Error',
+                    'status'  => 0,
+                    'error'   => $error->getMessage()
+                ];
+                $responseCode = 500;
+            }
+            return response()->json($response, $responseCode);
+        }
+    }
+
+    /**
+     * Login User.
+     */
+    public function login(Request $request) {
+        $validator = Validator::make($request->all(), [
+            'email'    => ['required', 'email',],
+            'password' => ['required'],
+        ]);
+
+        if($validator->fails()) {
+            $response = [
+                'message' => $validator->messages(),
+                'status'  => 0
+            ];
+            $responseCode = 400;
+            return response()->json($response, $responseCode);
+        } else {
+            try {
+                $user = User::where('email' , $request->email)->first();
+                if($user) {
+                    if(Hash::check($request->password, $user->password)) {
+                        $token = $user->createToken("auth_token")->accessToken;
+        
+                        $response = [
+                            'message' => 'User Logged In Successfully',
+                            'status'  => 1,
+                            'token'   => $token
+                        ];
+                        $responseCode = 200;
+                    } else {
+                        $response = [
+                            'message' => 'Incorrect password',
+                            'status'  => 0,
+                        ];
+                        $responseCode = 404;
+                    }
+                } else {
+                    $response = [
+                        'message' => 'User Not Found',
+                        'status'  => 0,
+                    ];
+                    $responseCode = 404;
+                }
+            } catch(\Exception $error) {
+                $response = [
+                    'message' => 'Internal Server Error',
+                    'error'   => $error->getMessage(),
+                    'status'  => 0
+                ];
+                $responseCode = 500;
+            }
+            return response()->json($response, $responseCode);
         }
     }
 

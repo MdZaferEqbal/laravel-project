@@ -64,8 +64,9 @@
                     </li>
                 </ul>
                 <form class="d-flex" role="search" action="{{url('/')}}/search">
-                    @if( session()->has('customer_id') && session()->has('customer_name'))
-                        <a class="text-decoration-none" href="{{route('sign.out')}}"><button class="btn btn-danger ms-1 min-width-sign-out me-2" type="button" >Sign Out</button></a>
+                    @if(session()->has('customer_id') && session()->has('customer_name'))
+                        <a class="text-decoration-none" href="{{route('users.data')}}"><button class="btn btn-outline-info me-1 min-height" type="button"><i class="fa-solid fa-user-group"></i></button></a>
+                        <a class="text-decoration-none" href="{{route('sign.out')}}"><button class="btn btn-danger ms-1 min-width-sign-out me-2" type="button" onclick="logoutUser()"><i class="fa-solid fa-power-off"></i></button></a>
                     @else
                         <a class="text-decoration-none" href="{{route('sign.in')}}"><button class="btn btn-outline-success me-1 min-height" type="button">Sign In</button></a>
                         <a class="text-decoration-none" href="{{route('sign.up')}}"><button class="btn btn-outline-primary ms-1 min-height me-2" type="button" >Sign Up</button></a>

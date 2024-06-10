@@ -37,7 +37,8 @@ class SearchNavbarRouteDataSeeder extends Seeder
             // [ 'name' => 'foreign.key.relation.doc', 'route' => '/foreign-key-relation' ],
             // [ 'name' => 'middleware.doc', 'route' => '/middleware' ],
             // New pages added on 28-05-2024
-            [ 'name' => 'api.restful.api.page', 'route' => '/api-restful-api' ],
+            // [ 'name' => 'api.restful.api.page', 'route' => '/api-restful-api' ],
+            // [ 'name' => 'users.data', 'route' => '/users-data' ],
         ];
 
         foreach( $routesData as $route ) {
